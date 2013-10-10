@@ -2,9 +2,9 @@
 
 ## Installation
 
-  brew tap madebymany/custom
-  brew install madebymany/custom/appalling
+    brew tap madebymany/custom
+    brew install madebymany/custom/appalling
 
 ## Usage 
 
-  ./appalling -h
+    ./appalling -h
