@@ -24,7 +24,7 @@ func main() {
 
 	flag.Parse()
 
-	target_url := fmt.Sprintf("http://app.madebymany.co.uk/admin/apps/%s/versions?auth_token=%s", app_id, access_key)
+	target_url := fmt.Sprintf("http://apps.madebymany.co.uk/admin/apps/%s/versions?auth_token=%s", app_id, access_key)
 	filename := filepath
 	extraParams := map[string]string{
 		"release_notes": release_notes,
