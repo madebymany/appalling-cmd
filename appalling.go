@@ -20,11 +20,11 @@ func main() {
 	flag.StringVar(&access_key, "key", "", "API key for upload/access")
 	flag.StringVar(&app_id, "app_id", "0", "App id")
 	flag.StringVar(&filepath, "file", "", "Full path to file")
-	flag.StringVar(&release_notes, "release_notes", "", "Full path to file")
+	flag.StringVar(&release_notes, "release_notes", "", "Release notes")
 
 	flag.Parse()
 
-	target_url := fmt.Sprintf("http://127.0.0.1:3000/admin/apps/%s/versions?auth_token=%s", app_id, access_key)
+	target_url := fmt.Sprintf("http://app.madebymany.co.uk/admin/apps/%s/versions?auth_token=%s", app_id, access_key)
 	filename := filepath
 	extraParams := map[string]string{
 		"release_notes": release_notes,
