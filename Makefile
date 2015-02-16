@@ -1,4 +1,6 @@
-GOPATH="${PWD}/gopath"
+cd "$(SOURCE_ROOT)"
+
+GOPATH="$(SOURCE_ROOT)/gopath"
 
 all:
 	echo "nothing to do"
