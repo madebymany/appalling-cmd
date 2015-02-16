@@ -1,0 +1,17 @@
+packages:
+  branch_codenames:
+    master: stable
+
+github_base_url: "https://github.com/madebymany/appalling-cmd"
+slack_notify_url: "https://hooks.slack.com/services/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"
+
+jobs:
+  appalling:
+    builder: "golang"
+    base: "quay.io/madebymany/build-bases:trusty"
+    packages:
+      - type: debian
+        name: appalling
+        repos:
+          - mxm-public
+        target: install
