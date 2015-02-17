@@ -18,11 +18,26 @@ func main() {
 	var release_notes string
 
 	flag.StringVar(&access_key, "key", "", "API key for upload/access")
-	flag.StringVar(&app_id, "app_id", "0", "App id")
+	flag.StringVar(&app_id, "app_id", "", "App id")
 	flag.StringVar(&filepath, "file", "", "Full path to file")
 	flag.StringVar(&release_notes, "release_notes", "", "Release notes")
 
 	flag.Parse()
+
+	envs := []string{"APPALLING_ACCESS_KEY", "APPALLING_APP_ID"}
+	for _, env := range envs {
+		envVal := os.Getenv(env)
+		if envVal == "" {
+			continue
+		}
+
+		switch env {
+		case "APPALLING_ACCESS_KEY":
+			access_key = envVal
+		case "APPALLING_APP_ID":
+			app_id = envVal
+		}
+	}
 
 	target_url := fmt.Sprintf("http://apps.madebymany.co.uk/admin/apps/%s/versions?auth_token=%s", app_id, access_key)
 	filename := filepath
